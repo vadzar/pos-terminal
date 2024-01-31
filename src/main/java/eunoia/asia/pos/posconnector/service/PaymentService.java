@@ -109,7 +109,9 @@ public class PaymentService {
 		BigDecimal priceHundred = amount.multiply(BigDecimal.valueOf(100));
 		String amountStr = String.valueOf(priceHundred);
 		int idx = amountStr.indexOf('.');
-		amountStr = amountStr.substring(0, idx);
+		if(idx != -1) {
+			amountStr = amountStr.substring(0, idx);
+		}
 
 		StringBuilder finalStrAmount = new StringBuilder();
 		int prefix = max_length - amountStr.length();
