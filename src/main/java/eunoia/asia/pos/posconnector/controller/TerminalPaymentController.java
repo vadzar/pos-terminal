@@ -37,4 +37,11 @@ public class TerminalPaymentController {
 
 		return ResponseEntity.ok(result);
 	}
+
+	@PostMapping(value = "/void", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Map<String, String>> voidPay(@RequestBody PaymentRequest reqBody) {
+		Map<String, String> result = paymentService.voidPayment(reqBody.getIpAddress(), reqBody.getPort(), reqBody.getAmount(), reqBody.getTrackingId(), reqBody.getTraceNumber());
+
+		return ResponseEntity.ok(result);
+	}
 }

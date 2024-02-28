@@ -8,6 +8,9 @@ public class PaymentRequest {
 	private BigDecimal amount;
 	private String trackingId;
 
+	// terminal ref number for VOID or TIP adjust
+	private String traceNumber;
+
 	public String getIpAddress() {
 		return ipAddress;
 	}
@@ -38,5 +41,13 @@ public class PaymentRequest {
 
 	public void setTrackingId(String trackingId) {
 		this.trackingId = trackingId;
+	}
+
+	public String getTraceNumber() {
+		return traceNumber;
+	}
+
+	public void setTraceNumber(String traceNumber) {
+		this.traceNumber = traceNumber;
 	}
 }
